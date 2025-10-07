@@ -1,0 +1,7 @@
+{
+  "name": "WeatherVista",
+  "description": "A visually appealing, interactive weather application that provides current weather, detailed forecasts, and weather graphs for any city worldwide, featuring dynamic animated backgrounds.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
