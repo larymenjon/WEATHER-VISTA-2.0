@@ -38,10 +38,6 @@ const App: React.FC = () => {
             </div>
           )}
 
-          {weather && forecast && !loading && !error && (
-            <WeatherSummary weather={weather} forecast={forecast} />
-          )}
-
           {loading && (
              <div className="flex justify-center items-center h-64">
                 <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-cyan-400"></div>
@@ -56,16 +52,19 @@ const App: React.FC = () => {
           )}
           
           {weather && forecast && !loading && !error && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="md:col-span-3 grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <CurrentWeather data={weather} />
-                  <WeatherDetails data={weather} forecast={forecast} />
-              </div>
-              <div className="md:col-span-3">
-                  <WeatherChart data={forecast.list} />
-              </div>
-              <div className="md:col-span-3">
-                  <Forecast data={forecast.list} />
+            <div className="space-y-6 animate-fadeIn">
+              <WeatherSummary weather={weather} forecast={forecast} />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="md:col-span-3 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <CurrentWeather data={weather} />
+                    <WeatherDetails data={weather} forecast={forecast} />
+                </div>
+                <div className="md:col-span-3">
+                    <WeatherChart data={forecast.list} />
+                </div>
+                <div className="md:col-span-3">
+                    <Forecast data={forecast.list} />
+                </div>
               </div>
             </div>
           )}

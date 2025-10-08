@@ -18,7 +18,7 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ data }) => {
         <p className="text-lg text-gray-300 capitalize">{weatherInfo.description}</p>
       </div>
       <div className="flex items-center justify-between w-full mt-4">
-        <div className="text-6xl font-bold">
+        <div className="text-6xl font-bold animate-temperature-pulse">
           {Math.round(main.temp)}°C
         </div>
         <div className="w-24 h-24">

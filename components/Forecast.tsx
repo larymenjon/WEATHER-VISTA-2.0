@@ -28,7 +28,7 @@ const Forecast: React.FC<ForecastProps> = ({ data }) => {
       <h3 className="text-lg font-semibold mb-4">5-Day Forecast</h3>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
         {dailyForecasts.map((day) => (
-          <div key={day.dt} className="flex flex-col items-center p-3 bg-white/10 rounded-lg">
+          <div key={day.dt} className="flex flex-col items-center p-3 bg-white/10 rounded-lg transition-transform duration-300 ease-in-out hover:scale-110 hover:bg-white/20">
             <p className="font-semibold text-sm">
               {new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'short' })}
             </p>
